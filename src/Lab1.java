@@ -24,7 +24,7 @@ public class Lab1 {
 			
 		avg = ((aryNums[0]+aryNums[1]+aryNums[2]+aryNums[3]+aryNums[4]+aryNums[5])/i);
 		
-		System.out.printf("%.2f", avg);
+		System.out.printf("Average: %.2f", avg);
 			
 	}
 }
