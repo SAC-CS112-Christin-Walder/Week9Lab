@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 import java.util.Scanner;
 
-public class Lab2 {
+public class Lab4 {
 
 	public static void main(String[] args) {
 		
@@ -23,6 +23,9 @@ public class Lab2 {
 		
 		for (i=0; i<10; i++) {
 		
+		System.out.print("What is the highest possible random number?: ");
+		int high = input.nextInt();
+			
 		System.out.print("Is the number odd or even? ");
 		String guess = input.next();
 		guess = guess.toUpperCase();
@@ -32,30 +35,27 @@ public class Lab2 {
 		if (guess.equals("EVEN"))
 			even = even + 1;
 			aryEven[i] = even;
-			
-		aryComputer[i] = 1 + (int)(Math.random() * 10);
 		
+		RandomNumber rand = new RandomNumber();
+		
+		int randNum = rand.GetANumber(high);
+			
+		System.out.printf("Random number: %d\n", randNum);
+				
 		if (aryComputer[i]%2==1)
 			oddeven = "ODD";
 		if (aryComputer[i]%2==0)
 			oddeven = "EVEN";
 				
-		System.out.printf("Random number: %d\n", aryComputer[i]);
-		
 		if (guess.equals(oddeven)) {
 			wins = wins + 1;
 			aryWins[i] = wins;
-			System.out.print("You were right!\n\n");
-			}
+			System.out.print("You were right!\n\n");}
 		else {
 			System.out.print("You were wrong...\n\n");
-			aryWins[i] = wins;
-			}
-		
-		
+			aryWins[i] = wins;}	
 		}
 	
-		
 		for (j=0; j<10; j++) {
 		
 		System.out.printf("Round %d: \n", j+1);
